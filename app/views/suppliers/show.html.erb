@@ -12,3 +12,19 @@
 
 <%= link_to 'Edit', edit_supplier_path(@supplier) %> |
 <%= link_to 'Back', suppliers_path %>
+
+<h3> Products </h3>
+<table border='1px'>
+  <tr>
+    <th>Product Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+<% @supplier.products.each do |product| %>
+  <tr>
+    <td><%= product.product_name %></td>
+    <td><%= product.quantity %></td>
+    <td><%= product.price %></td>
+  </tr>
+<% end %>
+</table>
